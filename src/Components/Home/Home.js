@@ -29,7 +29,7 @@ const allData = [
   {
     id: 4,
     brandName: "Lenovo",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmM_4PS1BpbYya_lI9f0P0SIZvk8n4GRjshg&usqp=CAU",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0PVKG9t9fAEO2ylSSYBsSj_8Dh9I6KrkE9A&usqp=CAU",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fuga eum ex? Voluptates, repellendus aspernatur!",
@@ -59,17 +59,21 @@ const Home = () => {
           type="text"
         />
       </div>
-      <div className="container">
-        <div className="row">
-          {allData.map((data) => {
-            // if (inputValue.length <= 0) {
-            // } else if
-            if (
-              data.brandName.toLowerCase().startsWith(inputValue.toLowerCase())
-            ) {
-              return <Product key={data.id} data={data}></Product>;
-            }
-          })}
+      <div className="containerWrap">
+        <div className="container">
+          <div className="row">
+            {allData.map((data) => {
+              // if (inputValue.length <= 0) {
+              // } else if
+              if (
+                data.brandName
+                  .toLowerCase()
+                  .startsWith(inputValue.toLowerCase())
+              ) {
+                return <Product key={data.id} data={data}></Product>;
+              }
+            })}
+          </div>
         </div>
       </div>
     </div>
